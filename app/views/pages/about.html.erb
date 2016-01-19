@@ -1,6 +1,14 @@
 <div class="jumbotron center">
 	<h1>About us</h1>
+	<% if user_signed_in? %>
+         <p> choose language pair</p>
+         <p>e.g. german - french</p>
+
+         <p>phone call test</p>
+         <a href="tel:5551234567 pp 5468">Call phoneme</a>
+     <% else %>
 	<p>Instant languange interpreting service on your smart phone for 2 to 10K users!</p>
-	<%= link_to "log in", "#", class: "btn btn-primary" %>
-	<%= link_to "sign up", "#", class: "btn btn-primary" %>
+	<%= link_to "log in", new_user_session_path, class: "btn btn-primary" %>
+	<%= link_to "sign up", new_user_registration_path, class: "btn btn-primary" %>
+	 <% end %>
 </div>
